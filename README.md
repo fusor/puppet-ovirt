@@ -83,12 +83,12 @@ Classes:
 * [ovirt::engine](#class-ovirtengine)
 * [ovirt::node](#class-ovirtnode)
 
-###Class: ovirt:
+###Class: ovirt::repo
 This class allows you to change the URL for the oVirt release package.
 
 For example, if you maintain a local repository you could do this:
 
-    class { 'ovirt::engine':
+    class { 'ovirt::repo':
       ovirt_release_base_url => 'http://ovirt.local.com/releases',
     }
 
