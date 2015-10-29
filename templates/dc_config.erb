@@ -86,6 +86,9 @@ def createCluster(engine_api):
         cluster = engine_api.clusters.get(name=CLUSTER_NAME)
         if cluster:
             print 'Cluster: ' + cluster.name + ' already exists'
+            print "Setting CPU type to '%s'" % CPU_TYPE
+            cluster.get_cpu().set_id(CPU_TYPE)
+            cluster.update()
         else:
             if engine_api.clusters.add(params.Cluster(name=CLUSTER_NAME, cpu=params.CPU(id=CPU_TYPE), data_center=engine_api.datacenters.get(DC_NAME), version=VERSION)):
                 print 'Cluster was created successfully'
