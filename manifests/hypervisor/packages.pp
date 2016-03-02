@@ -5,4 +5,8 @@ class ovirt::hypervisor::packages {
 		ensure  => installed,
 		require => Package[$ovirt::repo::ovirt_release],
 		}
+	package { 'glusterfs-fuse':
+		ensure  => installed,
+		require => Package[$ovirt::repo::ovirt_release],
+		}
 }
